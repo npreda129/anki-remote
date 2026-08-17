@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+  <a href="/">Home</a>
+  <div id="front"><%- question %></div>
+  <div id="back" hidden><%- answer %></div>
+  <button id="show">Show Answer</button>
+  <form id="grade" action="/review/<%- deckName %>" method="POST" hidden>
+    <button type="submit" name="ease" value=1>Again</button>
+    <button type="submit" name="ease" value=2>Hard</button>
+    <button type="submit" name="ease" value=3>Good</button>
+    <button type="submit" name="ease" value=4>Easy</button>
+  </form>
+  <script type="text/javascript">
+    // handle visibility
+    const back = document.getElementById("back");
+    const grade = document.getElementById("grade");
+    const show = document.getElementById("show");
+    show.addEventListener("click", (e) => {
+      back.removeAttribute("hidden");
+      grade.removeAttribute("hidden");
+    });
+  </script>
+</body>
+</html>
