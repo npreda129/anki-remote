@@ -5,8 +5,10 @@ const path = require("path");
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname,"views"));
 
+const ANKICONNECT_URL = process.env.ANKICONNECT_URL || "http://localhost:8765";
+
 async function ankiHandler(action,params) {
-  const ankiResponse = await fetch("http://localhost:8765", {
+  const ankiResponse = await fetch(ANKICONNECT_URL, {
     method: "POST",
     body: JSON.stringify({
       action: action,
@@ -41,6 +43,8 @@ app.get("/review/:name", (request, response) => {
   })
   })
 });
+
+app.use("/js", express.static(path.join(__dirname, "js")));
 
 const urlEncodedParser = bodyParser.urlencoded();
 

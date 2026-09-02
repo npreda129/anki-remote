@@ -7,7 +7,10 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mock:anki": "node mock-ankiconnect.js",
+    "test:e2e": "node scripts/run-e2e.js",
+    "test:e2e:open": "node scripts/run-e2e.js --open"
   },
   "dependencies": {
     "ejs": "^6.0.1",
