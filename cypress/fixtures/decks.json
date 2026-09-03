@@ -1,0 +1,7 @@
+{
+  "Deadlock": [
+    { "question": "What is a deadlock?", "answer": "A state where two or more processes are each waiting on a resource held by the other." },
+    { "question": "Name one way to prevent deadlock.", "answer": "Impose a strict ordering on lock acquisition." }
+  ],
+  "Empty Deck": []
+}
